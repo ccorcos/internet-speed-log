@@ -9,15 +9,15 @@ Here's how I set it up.
 
 Once you have your raspberry pi set up and logged in:
 
-sudo aptitude update
-sudo apt-get install git
-sudo apt-get install tmux
-git clone https://github.com/ccorcos/InternetSpeedLog.git
-tmux
-cd InternetSpeedLog
-python SpeedCheck.py
-control-b
-d
+> `sudo aptitude update`
+> `sudo apt-get install git`
+? `sudo apt-get install tmux`
+> `git clone https://github.com/ccorcos/InternetSpeedLog.git`
+> `tmux`
+> `cd InternetSpeedLog`
+> `python SpeedCheck.py`
+> control-b
+> d
 
 Tmux is a program that allows you to quit terminal while leaving the program running. This is particularly useful is you ssh into the computer to do all of this as I did. 
 
@@ -27,14 +27,14 @@ tmux attach
 Also, note that if you are ssh'd into your raspi, to get out of tmux you need to hold the function key, 
 fn+control+b
 
-The log of internet speed is written to a file, speedCheck.py. Rather than go into tmux to view the print statements, you can just navigate to this file and open it:
+The log of internet speed is written to a file, speedLog.txt. Rather than go into tmux to view the print statements, you can just navigate to this file and open it:
 
 if you using ssh and kind of a noob:
-cd InternetSpeedLog
-vi speedLog.txt
-<esc>
-:
-q
+> `cd InternetSpeedLog`
+> `vi speedLog.txt`
+> esc
+> `:`
+> `q`
 
 good luck!
 
