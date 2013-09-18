@@ -3,7 +3,7 @@ InternetSpeedLog
 
 Using this repo, https://github.com/teeks99/speed_check, I modified it to write out to test internet speeds every hour and write it out to a text file. I'm hoping to get my internet bill prorated for not getting the internet speeds they promised ;)
 
-I'm doing this on my rasperberry pi so I dont have to use a computer. I am plugging my raspi straight into the ethernet -- usb wifi can be slower than your real internet speed.
+I'm doing this on my rasperberry pi so I dont have to use a computer. I am plugging my raspi straight into the ethernet -- usb wifi can bottleneck internet speed.
 
 Here's how I set it up.
 
