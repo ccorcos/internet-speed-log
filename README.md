@@ -11,7 +11,7 @@ Once you have your raspberry pi set up and logged in:
 
 > `sudo aptitude update`
 > `sudo apt-get install git`
-? `sudo apt-get install tmux`
+> `sudo apt-get install tmux`
 > `git clone https://github.com/ccorcos/InternetSpeedLog.git`
 > `tmux`
 > `cd InternetSpeedLog`
