@@ -1,42 +1,35 @@
-InternetSpeedLog
-================
+# InternetSpeedLog
 
-Using this repo, https://github.com/teeks99/speed_check, I modified it to write out to test internet speeds every hour and write it out to a text file. I'm hoping to get my internet bill prorated for not getting the internet speeds they promised ;)
+This program will test your internet speed and append it to the file `speedLog.txt`.
+You can schedule it to run however often you want using `crontab`. Also if you have
+a laptop like me, it may be more suitable to run this on a Raspberry Pi or something
+that is always connected to the internet.
 
-I'm doing this on my rasperberry pi so I dont have to use a computer. I am plugging my raspi straight into the ethernet -- usb wifi can bottleneck internet speed.
+## Getting Started
 
-Here's how I set it up.
+This program uses the fabulous `speedtest-cli` tool:
 
-Once you have your raspberry pi set up and logged in:
+    sudo pip install speedtest-cli
 
-> `sudo aptitude update`  
-> `sudo apt-get install git`  
-> `sudo apt-get install tmux`  
-> `git clone https://github.com/ccorcos/InternetSpeedLog.git`  
-> `tmux`  
-> `cd InternetSpeedLog`  
-> `python SpeedCheck.py`  
-> control-b  
-> d  
+Then download this repo and setup a cron job:
 
-Tmux is a program that allows you to quit terminal while leaving the program running. This is particularly useful is you ssh into the computer to do all of this as I did. 
+    git clone https://github.com/ccorcos/internet-speed-log.git
 
-from terminal to get back to tmux to stop the program from running, 
-tmux attach
+### Crontab
 
-Also, note that if you are ssh'd into your raspi, to get out of tmux you need to hold the function key, 
-fn+control+b
+Setting up a cron job on a unix system (I use my Raspberry Pi) is pretty easy. There is simple [documentation](http://www.raspberrypi.org/documentation/linux/usage/cron.md) for
+how to do it as well.
 
-The log of internet speed is written to a file, speedLog.txt. Rather than go into tmux to view the print statements, you can just navigate to this file and open it:
+Run `crontab -e` to open up the cron job list. Append the following line:
 
-if you using ssh and kind of a noob:
-> `cd InternetSpeedLog`  
-> `vi speedLog.txt`  
-> esc  
-> `:`  
-> `q`  
+```
+# Speedtest
+0 * * * * python /home/pi/programs/InternetSpeedLog/speedtest.py
+```
 
-good luck!
+This will run `speedtest.py` every hour on the hour.
 
+### Plotting
 
-
+I've including a `plot-data.py` script that is incomplete right now will plot your
+download and upload speed as a function of a time span. This is coming soon.

@@ -1,12 +1,14 @@
 from pylab import *
 
+# need to update this for the new format
+
 f = open("speedLog.txt", 'r')
 a = f.read()
 a = a.replace(',','')
 a = a.split('\n')[0:-1]
 a = [b.split(' ') for b in a]
 
-# date ranges. include leading zeros. 
+# date ranges. include leading zeros.
 # maxDate is a day after you want plotted
 minDate = '09/19/2013'
 maxDate = '10/20/2013'
@@ -51,8 +53,3 @@ subplots_adjust(bottom=.2)
 ylabel('MB/s')
 xlabel('Dates')
 show()
-
-
-
-
-
