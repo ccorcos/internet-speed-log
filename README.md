@@ -24,7 +24,7 @@ Run `crontab -e` to open up the cron job list. Append the following line:
 
 ```
 # Speedtest
-0 * * * * python /home/pi/programs/InternetSpeedLog/speedtest.py
+0 * * * * python /home/pi/programs/internet-speed-log/speedtest.py
 ```
 
 This will run `speedtest.py` every hour on the hour.
