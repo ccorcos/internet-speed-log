@@ -1,4 +1,4 @@
-# InternetSpeedLog
+# Internet Speed Log
 
 This program will test your internet speed and append it to the file `speedLog.txt`.
 You can schedule it to run however often you want using `crontab`. Also if you have
